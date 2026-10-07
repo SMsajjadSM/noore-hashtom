@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نور هشتم | زیورهای حرز و دعا</title>
+    <meta
+      name="description"
+      content="فروشگاه نور هشتم؛ عرضه‌کننده انگشتر، گردنبند و قاب‌های حرز دست‌ساز. سفارش با یک تماس ساده."
+    />
+    <script type="module" crossorigin src="/noore-hashtom/assets/index-BNW2Oo80.js"></script>
+    <link rel="stylesheet" crossorigin href="/noore-hashtom/assets/index-5PdvCPyn.css">
+  </head>
+  <body>
+    <div id="initial-loader">
+      <div class="spinner"></div>
+      <span class="loader-label">در حال بارگذاری فروشگاه...</span>
+      <button class="loader-retry" onclick="location.reload()">
+        بارگذاری طول کشید، دوباره تلاش کنید
+      </button>
+    </div>
+    <div id="root"></div>
+
+    <script>
+      // Plain JS, no framework dependency: if the app hasn't mounted after
+      // a while, surface a retry button instead of leaving a silent spinner.
+      setTimeout(function () {
+        var loader = document.getElementById("initial-loader");
+        if (loader && !loader.classList.contains("hide")) {
+          loader.classList.add("stuck");
+        }
+      }, 9000);
+    </script>
+
+  </body>
+</html>
