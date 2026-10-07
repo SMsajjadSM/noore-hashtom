@@ -1,11 +1,8 @@
-// برای فعال شدن دکمه «توضیحات» روی یک محصول، فقط کافیست متن دلخواه را
-// داخل فیلد details همان محصول بنویسید. اگر details خالی/حذف شود، دکمه
-// توضیحات برای آن محصول نمایش داده نمی‌شود.
-//
-// برای گذاشتن عکس روی هر محصول، فایل عکس را داخل پوشه public/photo بگذار
-// و آدرسش را همین‌جا به شکل "/photo/نام-فایل.jpg" بنویس. اگر image خالی/null
-// بماند یا فایل پیدا نشود، همان آیکون قبلی به‌عنوان آواتار جایگزین نمایش
-// داده می‌شود.
+import abi from '../assests/ابی-دحانه.jpg'; 
+import bazo from '../assests/بازوبند1.jpg'; 
+// import bazo1 from '../assests/بازوبند12.jpg'; 
+import herz from '../assests/حرز-امام-جواد.jpg'; 
+
 export const PRODUCTS = [
   {
     id: 1,
@@ -24,7 +21,7 @@ export const PRODUCTS = [
     desc: "چرم طبیعی صد در صد",
     price: 50000,
     icon: "pendant",
-    image: null,
+    image: bazo,
     tag: null,
     details:
       "بازوبند چرم طبیعی حیوانی با سایز متوسط مناسب برای بازوهای متوسط تا نیمه بزرگ و همچنین کودکان، لازم به ذکر هست که بازوبند صد در صد چرم طبیعی هست و طبق احادیث باید حرز درون بازوبند چرم طبیعی قرار بگیرد.",
@@ -35,7 +32,7 @@ export const PRODUCTS = [
     desc: "چرم طبیعی صد در صد",
     price: 55000,
     icon: "pendant",
-    image: null,
+    image: bazo,
     tag: null,
     details:
       "بازوبند چرم طبیعی حیوانی با سایز بزرگ مناسب برای بازوهای بزرگ و نیمه بزرگ و، لازم به ذکر هست که بازوبند صد در صد چرم طبیعی هست و طبق احادیث باید حرز درون بازوبند چرم طبیعی قرار بگیرد.",
@@ -44,9 +41,9 @@ export const PRODUCTS = [
     id: 4,
     name: "قاب نقره حرز و ادعیه",
     desc: "قاب نقره با عیار 925 بدون ناخالصی",
-    price: 950000,
+    price: 1000000,
     icon: "frame",
-    image: "/photo/حرز-امام-جواد.jpg",
+    image: null,
     tag: null,
     details:
       "قاب نقره با عیار 925 مناسب برای انواع دعا و حرز که نیاز به محفظه ای برای مراقبت از شر اجنه می باشد",
@@ -55,9 +52,9 @@ export const PRODUCTS = [
     id: 5,
     name: "پک کامل حرز امام جواد (ع)",
     desc: "حرز امام جواد(ع) + قاب نقره + بازوبند چرم طبیعی + نماز نیابتی",
-    price: 1300000,
+    price: 1350000,
     icon: "frame",
-    image: "/photo/حرز-امام-جواد.jpg",
+    image: herz,
     tag: "پر فروش",
     details: "",
   },
@@ -77,7 +74,7 @@ export const PRODUCTS = [
     desc: "مناسب برای شخص و مکان",
     price: 250000,
     icon: "frame",
-    image: "/photo/ابی-دحانه.jpg",
+    image: null,
     tag: "پرفروش",
     details: "",
   },
@@ -87,7 +84,7 @@ export const PRODUCTS = [
     desc: "مناسب برای شخص و مکان و ماشین",
     price: 350000,
     icon: "frame",
-    image: null,
+    image: abi,
     tag: "پرفروش",
     details: "",
   },
