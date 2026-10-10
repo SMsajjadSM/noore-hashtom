@@ -417,3 +417,71 @@ a {
   width: auto;
   display: block;
 }
+
+/* بخش‌ها هنگام اسکرول زیر هدر چسبان نروند */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+.hover-primary:hover {
+  color: var(--primary-strong);
+}
+
+/* کارت مقاله */
+.article-card {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+.article-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-strong);
+}
+.article-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+/* متن مقاله */
+.prose-article {
+  font-size: 1.05rem;
+  line-height: 2.2;
+  color: var(--text);
+}
+.prose-article p {
+  margin: 0 0 1.4rem;
+  color: var(--text-muted);
+}
+.prose-article h2 {
+  font-family: "Amiri", "Vazirmatn", serif;
+  font-size: 1.7rem;
+  line-height: 1.6;
+  margin: 2.6rem 0 1rem;
+  color: var(--text);
+}
+.prose-article ul {
+  margin: 0 0 1.6rem;
+  padding: 0 1.4rem 0 0;
+  list-style: disc;
+  color: var(--text-muted);
+}
+.prose-article li {
+  margin-bottom: 0.4rem;
+}
+.prose-article li::marker {
+  color: var(--primary-strong);
+}
+.prose-article blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.5rem;
+  border-right: 4px solid var(--primary-strong);
+  background: var(--primary-soft);
+  border-radius: 14px;
+  font-family: "Amiri", "Vazirmatn", serif;
+  font-size: 1.25rem;
+  line-height: 2;
+  color: var(--text);
+}

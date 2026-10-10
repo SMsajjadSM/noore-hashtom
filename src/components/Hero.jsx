@@ -10,7 +10,7 @@ export default function Hero({ onOpenModal }) {
           زیورهای حرز، دست‌ساز و اصیل
         </p>
         <h1
-          className="font-display text-4xl md:text-5xl leading-[1.35] max-w-4xl"
+          className="font-display text-4xl md:text-6xl leading-[1.35] max-w-4xl"
           style={{ color: "var(--text)" }}
         >
           آرامش و امنیت، هدیه حرز اصیل امام جواد (ع)

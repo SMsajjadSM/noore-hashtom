@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { asset } from "../lib/asset";
 import { SunIcon, MoonIcon, PhoneIcon } from "./icons";
 import { LOGO_SRC } from "../data/contact";
 
 const LINKS = [
-  { href: "#home", label: "خانه" },
-  { href: "#products", label: "محصولات" },
-  { href: "#about", label: "درباره ما" },
-  { href: "#contact", label: "تماس" },
+  { to: "/", label: "خانه" },
+  { to: "/#products", label: "محصولات" },
+  { to: "/articles", label: "مقالات" },
+  { to: "/#about", label: "درباره ما" },
+  { to: "/#contact", label: "تماس" },
 ];
 
 function BrandLogo() {
@@ -22,7 +25,7 @@ function BrandLogo() {
 
   return (
     <img
-      src={LOGO_SRC}
+      src={asset(LOGO_SRC)}
       alt="نور هشتم"
       className="brand-logo"
       onError={() => setFailed(true)}
@@ -41,10 +44,10 @@ export default function Header({ theme, toggle, onOpenModal }) {
         borderBottom: "1px solid var(--border)",
       }}
     >
-      <div className="container-px mx-auto flex items-center justify-between py-2 max-w-6xl">
-        <a href="#home" className="flex items-center gap-2">
+      <div className="container-px mx-auto flex items-center justify-between py-4 max-w-6xl">
+        <Link to="/" className="flex items-center gap-2">
           <BrandLogo />
-        </a>
+        </Link>
 
         <nav
           aria-label="ناوبری اصلی"
@@ -52,15 +55,15 @@ export default function Header({ theme, toggle, onOpenModal }) {
           style={{ color: "var(--text-muted)" }}
         >
           {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <Link
+              key={l.to}
+              to={l.to}
               style={{ transition: "color .2s" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "var(--primary-strong)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -103,15 +106,15 @@ export default function Header({ theme, toggle, onOpenModal }) {
           style={{ borderTop: "1px solid var(--border)" }}
         >
           {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <Link
+              key={l.to}
+              to={l.to}
               onClick={() => setOpen(false)}
               className="pt-3 text-sm font-medium"
               style={{ color: "var(--text)" }}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

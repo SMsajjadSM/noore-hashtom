@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function LazyMount({
+  id,
   children,
   rootMargin = "350px",
   minHeight = 320,
@@ -30,7 +31,7 @@ export default function LazyMount({
   }, [visible, rootMargin]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id={id}>
       {visible ? (
         children
       ) : (

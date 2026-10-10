@@ -186,3 +186,20 @@ export const FrameIcon = () => (
     <path d="M18 19h11M18 24h11M18 29h7" strokeLinecap="round" />
   </svg>
 );
+
+export const ArrowIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M19 12H5M11 6l-6 6 6 6" />
+  </svg>
+);

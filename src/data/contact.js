@@ -1,4 +1,4 @@
-import logo from "../assests/logo main1.png";
+import logo from "../../public/photo/logo-mini.png";
 export const PHONES = [
   {
     id: "p1",

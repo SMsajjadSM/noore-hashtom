@@ -1,7 +1,7 @@
-import abi from '../assests/ابی-دحانه.jpg'; 
-import bazo from '../assests/بازوبند1.jpg'; 
-// import bazo1 from '../assests/بازوبند12.jpg'; 
-import herz from '../assests/حرز-امام-جواد.jpg'; 
+import abi from "../../public/photo/abi-aviz.jpg";
+import bazo from "../../public/photo/bazobnd-sade.jpg";
+// import bazo1 from '../assests/بازوبند12.jpg';
+import herz from "../../public/photo/pack-herz.jpg";
 
 export const PRODUCTS = [
   {

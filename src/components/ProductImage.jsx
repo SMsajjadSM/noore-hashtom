@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { asset } from "../lib/asset";
 import { RingIcon, PendantIcon, FrameIcon } from "./icons";
 
 const ICONS = { ring: RingIcon, pendant: PendantIcon, frame: FrameIcon };
@@ -19,7 +20,7 @@ export default function ProductImage({ src, alt, icon }) {
 
   return (
     <img
-      src={src}
+      src={asset(src)}
       alt={alt}
       loading="lazy"
       onError={() => setFailed(true)}

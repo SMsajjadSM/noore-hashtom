@@ -3,7 +3,7 @@ import { PRODUCTS } from "../data/products";
 
 export default function Products({ onOpenOrder, onOpenDetails }) {
   return (
-    <section id="products" className="py-20">
+    <section className="py-20">
       <div className="container-px mx-auto max-w-6xl">
         <div className="mb-12 max-w-xl">
           <h2 className="font-display text-3xl md:text-4xl mb-4">محصولات</h2>
