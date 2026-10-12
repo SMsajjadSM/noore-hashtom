@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smsajjadsm.github.io/noore-hashtom//sitemap.xml
