@@ -485,3 +485,227 @@ a {
   line-height: 2;
   color: var(--text);
 }
+/* ───────── بنر اول صفحه (حرز امام جواد) ─────────
+   اندازه‌ها با cqw (درصد عرض بنر) هستند تا کل بنر مثل یک تصویر کوچک/بزرگ شود.
+   زیر ۸۶۰px چیدمان عمودی با فونت‌های معمولی جایگزین می‌شود. */
+.hero-banner {
+  --bg1: #f3e6c4;
+  --bg2: #fffaf0;
+  --tx: #17403d;
+  --gold: #b0792a;
+  --btn: #0f7b73;
+  --btnt: #ffffff;
+  --glow: rgba(226, 177, 66, 0.55);
+  --pat: rgba(15, 123, 115, 0.1);
+
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  color: var(--tx);
+  background: radial-gradient(120% 120% at 25% 50%, var(--bg2), var(--bg1));
+}
+:root[data-theme="dark"] .hero-banner {
+  --bg1: #050d0d;
+  --bg2: #143634;
+  --tx: #f7edd2;
+  --gold: #ecc56a;
+  --btn: linear-gradient(135deg, #f3d27a, #c9942f);
+  --btnt: #1a1405;
+  --glow: rgba(236, 197, 106, 0.35);
+  --pat: rgba(236, 197, 106, 0.07);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hero-banner {
+    --bg1: #050d0d;
+    --bg2: #143634;
+    --tx: #f7edd2;
+    --gold: #ecc56a;
+    --btn: linear-gradient(135deg, #f3d27a, #c9942f);
+    --btnt: #1a1405;
+    --glow: rgba(236, 197, 106, 0.35);
+    --pat: rgba(236, 197, 106, 0.07);
+  }
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+      from 45deg at 50% 50%,
+      var(--pat) 0 25%,
+      transparent 0 50%,
+      var(--pat) 0 75%,
+      transparent 0
+    )
+    0 0 / 6cqw 6cqw;
+  opacity: 0.8;
+  -webkit-mask: linear-gradient(90deg, #000, transparent 70%);
+  mask: linear-gradient(90deg, #000, transparent 70%);
+}
+.hb-frame {
+  position: absolute;
+  inset: 1.6cqw;
+  border: 0.18cqw solid var(--gold);
+  border-radius: 1.4cqw;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.hb-txt {
+  position: relative;
+  z-index: 2;
+  padding: 0 4.5cqw 0 1cqw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5cqw;
+}
+.hb-logo {
+  width: 9.5cqw;
+  height: auto;
+  filter: drop-shadow(0 0.4cqw 0.8cqw rgba(0, 0, 0, 0.25));
+}
+.hb-badge {
+  font-size: 1.5cqw;
+  font-weight: 700;
+  color: var(--gold);
+  border: 0.14cqw solid var(--gold);
+  border-radius: 5cqw;
+  padding: 0.5cqw 1.6cqw;
+}
+.hb-title {
+  margin: 0;
+  font-size: 6.2cqw;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--tx);
+}
+.hb-title span {
+  color: var(--gold);
+}
+.hb-desc {
+  margin: 0;
+  font-size: 2cqw;
+  line-height: 1.85;
+  opacity: 0.92;
+  max-width: 34cqw;
+}
+.hb-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1cqw;
+  font-weight: 800;
+  font-size: 2.4cqw;
+  background: var(--btn);
+  color: var(--btnt);
+  padding: 1.3cqw 3.4cqw;
+  border-radius: 5cqw;
+  box-shadow: 0 0.8cqw 2.4cqw var(--glow);
+  transition: transform 0.2s ease;
+}
+.hb-cta:hover {
+  transform: translateY(-2px);
+}
+.hb-cta:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+.hb-vis {
+  position: relative;
+  height: 100%;
+  z-index: 1;
+}
+.hb-vis::before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 12%;
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow), transparent 68%);
+}
+.hb-vis img {
+  position: absolute;
+  filter: drop-shadow(0 1.2cqw 1.6cqw rgba(0, 0, 0, 0.4));
+}
+.hb-s {
+  height: 84%;
+  width: auto;
+  left: 10%;
+  top: 8%;
+  transform: rotate(-7deg);
+}
+.hb-l {
+  width: 50%;
+  height: auto;
+  right: 4%;
+  bottom: 12%;
+  transform: rotate(-3deg);
+}
+.hb-c {
+  height: 46%;
+  width: auto;
+  left: 34%;
+  bottom: 7%;
+  z-index: 2;
+}
+
+@media (max-width: 860px) {
+  .hero-banner {
+    aspect-ratio: auto;
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+    padding: 26px 22px 6px;
+  }
+  .hero-banner::before {
+    background-size: 44px 44px;
+    -webkit-mask: linear-gradient(180deg, transparent 35%, #000);
+    mask: linear-gradient(180deg, transparent 35%, #000);
+  }
+  .hb-frame {
+    inset: 8px;
+    border-width: 1.5px;
+    border-radius: 12px;
+  }
+  .hb-txt {
+    padding: 0;
+    gap: 12px;
+  }
+  .hb-logo {
+    width: 64px;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
+  }
+  .hb-badge {
+    font-size: 12px;
+    border-width: 1.2px;
+    padding: 4px 14px;
+  }
+  .hb-title {
+    font-size: clamp(32px, 9vw, 52px);
+  }
+  .hb-desc {
+    font-size: 15px;
+    max-width: none;
+  }
+  .hb-cta {
+    font-size: 17px;
+    gap: 8px;
+    padding: 12px 30px;
+    border-radius: 999px;
+    box-shadow: 0 8px 22px var(--glow);
+  }
+  .hb-vis {
+    height: auto;
+    aspect-ratio: 570 / 630;
+    width: min(100%, 380px);
+    margin: 10px auto 0;
+  }
+}
