@@ -16,6 +16,7 @@
 //
 // ⚠️ متن‌های زیر «نمونه» هستند؛ آن‌ها را با متن خودت جایگزین کن.
 // ─────────────────────────────────────────────────────────────
+import post1 from "../../public/photo/herz-post.jpg"
 export const ARTICLES = [
   {
     slug: "herz-imam-javad",
@@ -24,7 +25,7 @@ export const ARTICLES = [
       "آشنایی با حرز امام جواد (ع)، پیشینه‌ی آن و نکاتی که برای نگهداری و همراه داشتن آن باید رعایت شود. (مرور کلی).",
     date: "2026-10-12",
     readTime: 5,
-    image: null,
+    image: post1,
     content: [
       {
         type: "p",
