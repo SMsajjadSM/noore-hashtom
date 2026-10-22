@@ -1,8 +1,11 @@
-import abi from "../../public/photo/abi-aviz.jpg";
-import bazo from "../../public/photo/bazobnd-sade.jpg";
+import abi from "../../public/photo/ابی-دجانه-با-اویز.jpg";
+import bazo from "../../public/photo/بازوبند-ساده.jpg";
 // import bazo1 from '../assests/بازوبند12.jpg';
-import herz from "../../public/photo/pack-herz.jpg";
-
+import herz from "../../public/photo/پک-حرز.jpg";
+import herzkhali from "../../public/photo/حرز-روی-پوست-تنها.jpg"
+import noghre from "../../public/photo/قاب-نقره-خالی.jpg"
+import daganepoost from "../../public/photo/ابی-دجانه-روی-پوست-اهو.jpg"
+import nmz from "../../public/photo/nmz.jpg"
 export const PRODUCTS = [
   {
     id: 1,
@@ -10,7 +13,7 @@ export const PRODUCTS = [
     desc: "با رعایت تمامی آداب",
     price: 200000,
     icon: "ring",
-    image: null,
+    image: herzkhali,
     tag: "پرفروش",
     details:
       "حرز امام جواد (ع) روی پوست آهو با رعایت تمامی آداب شامل کتابت در ساعات غیر قمر در عقرب، با وضو بودن کاتب، استفاده از وسایل هایی که تولید بلاد کفر نیستن حین تولید محصول و...",
@@ -43,7 +46,7 @@ export const PRODUCTS = [
     desc: "قاب نقره با عیار 925 بدون ناخالصی",
     price: 1000000,
     icon: "frame",
-    image: null,
+    image: noghre,
     tag: null,
     details:
       "قاب نقره با عیار 925 مناسب برای انواع دعا و حرز که نیاز به محفظه ای برای مراقبت از شر اجنه می باشد",
@@ -64,7 +67,7 @@ export const PRODUCTS = [
     desc: "توسط فرد قابل اعتماد",
     price: 150000,
     icon: "pendant",
-    image: null,
+    image: nmz,
     tag: null,
     details: "",
   },
@@ -74,7 +77,7 @@ export const PRODUCTS = [
     desc: "مناسب برای شخص و مکان",
     price: 250000,
     icon: "frame",
-    image: null,
+    image: daganepoost,
     tag: "پرفروش",
     details: "",
   },
