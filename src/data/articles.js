@@ -16,7 +16,7 @@
 //
 // ⚠️ متن‌های زیر «نمونه» هستند؛ آن‌ها را با متن خودت جایگزین کن.
 // ─────────────────────────────────────────────────────────────
-import post1 from "../../public/photo/herz-post.jpg"
+import post1 from "../../public/photo/herzpost.jpg"
 export const ARTICLES = [
   {
     slug: "herz-imam-javad",
