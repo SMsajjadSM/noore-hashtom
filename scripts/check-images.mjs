@@ -4,25 +4,27 @@
 // فایلی که اصلاً داخل public/ نیست.
 import fs from "node:fs";
 import path from "node:path";
-import { ARTICLES } from "../src/data/articles.js";
-import { LOGO_SRC } from "../src/data/contact.js";
+import { loadModules } from "./load-data.mjs";
 
-// اگر در products.js عکس‌ها را با import گرفته‌ای (import x from "...jpg")، نود
-// نمی‌تواند آن فایل را بخواند. در آن حالت خود Vite موقع build اگر فایلی نباشد
-// خطا می‌دهد، پس این بررسی فقط برای مسیرهای متنی انجام می‌شود.
-let PRODUCTS = [];
-try {
-  ({ PRODUCTS } = await import("../src/data/products.js"));
-} catch (e) {
-  console.log("check-images: products.js عکس‌ها را با import می‌گیرد؛ Vite خودش وجود فایل‌ها را موقع build چک می‌کند.");
-}
+// عکس‌هایی که با import گرفته شده‌اند را Vite خودش موقع build چک می‌کند (اگر
+// فایل نباشد build خطا می‌دهد). اینجا فقط مسیرهای متنی مثل "/photo/x.jpg" را
+// بررسی می‌کنیم؛ آدرس‌های ساخته‌شده از import با این الگوها شناخته و رد می‌شوند.
+const mods = await loadModules([
+  "/src/data/articles.js",
+  "/src/data/products.js",
+  "/src/data/contact.js",
+]);
+const { ARTICLES } = mods["/src/data/articles.js"];
+const { PRODUCTS } = mods["/src/data/products.js"];
+const { LOGO_SRC } = mods["/src/data/contact.js"];
+const isImported = (src) => /\/(public|src|@fs|assets)\//.test(src) || /^[A-Za-z]:/.test(src);
 
 const publicDir = path.resolve("public");
 const refs = [
   ["لوگو", LOGO_SRC],
   ...PRODUCTS.map((p) => [`محصول «${p.name.trim()}»`, p.image]),
   ...ARTICLES.map((a) => [`مقاله «${a.slug}»`, a.image]),
-].filter(([, src]) => typeof src === "string" && src && !/^(https?:|data:)/.test(src));
+].filter(([, src]) => typeof src === "string" && src && !/^(https?:|data:)/.test(src) && !isImported(src));
 
 let problems = 0;
 const warn = (msg) => {

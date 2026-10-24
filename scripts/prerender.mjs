@@ -5,8 +5,11 @@
 // و فایل‌های 404.html، sitemap.xml و robots.txt را هم می‌سازد.
 import fs from "node:fs";
 import path from "node:path";
-import { ARTICLES } from "../src/data/articles.js";
-import { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION } from "../src/data/site.js";
+import { loadModules } from "./load-data.mjs";
+
+const mods = await loadModules(["/src/data/articles.js", "/src/data/site.js"]);
+const { ARTICLES } = mods["/src/data/articles.js"];
+const { SITE_URL, SITE_NAME, DEFAULT_DESCRIPTION } = mods["/src/data/site.js"];
 
 const dist = path.resolve("dist");
 const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
