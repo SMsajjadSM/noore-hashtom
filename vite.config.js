@@ -7,6 +7,6 @@ import react from "@vitejs/plugin-react";
 // - اگر دامنه‌ی اختصاصی داری یا آدرس USERNAME.github.io است، "/" بگذار.
 
 export default defineConfig({
-  base: '/noore-hashtom/', 
+  base: '/', 
   plugins: [react()],
 });
