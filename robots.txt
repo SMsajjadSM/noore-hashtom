@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smsajjadsm.github.io/noore-hashtom//sitemap.xml
+Sitemap: https://noor8shop.ir//sitemap.xml
